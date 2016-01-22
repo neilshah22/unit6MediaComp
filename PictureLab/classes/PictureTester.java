@@ -17,6 +17,22 @@ public class PictureTester
     beach.explore();
   }
   
+    public static void testZeroRed()
+  {
+    Picture beach = new Picture("beach.jpg");
+    beach.explore();
+    beach.zeroRed();
+    beach.explore();
+  }
+  
+    public static void testZeroGreen()
+  {
+    Picture beach = new Picture("beach.jpg");
+    beach.explore();
+    beach.zeroGreen();
+    beach.explore();
+  }
+  
   /** Method to test mirrorVertical */
   public static void testMirrorVertical()
   {
@@ -38,17 +54,24 @@ public class PictureTester
   /** Method to test the collage method */
   public static void testCollage()
   {
-    Picture canvas = new Picture("640x480.jpg");
-    canvas.createCollage();
+    Picture canvas = new Picture(1200, 1200);
+    canvas.createCollage("bb8.jpg");
     canvas.explore();
   }
   
   /** Method to test edgeDetection */
   public static void testEdgeDetection()
   {
-    Picture swan = new Picture("swan.jpg");
-    swan.edgeDetection(10);
-    swan.explore();
+    Picture starwars = new Picture("kylo.jpg");
+    starwars.edgeDetection(10);
+    starwars.explore();
+  }
+  
+   public static void testCropAndCopy()
+  {
+    Picture starwars = new Picture("starwars.jpg");
+    starwars.cropAndCopy(starwars, 10, 100, 30, 80, 130, 725);
+    starwars.explore();
   }
   
   /** Main method for testing.  Every class can have a main
@@ -58,7 +81,8 @@ public class PictureTester
     // uncomment a call here to run a test
     // and comment out the ones you don't want
     // to run
-    testZeroBlue();
+    //testCropAndCopy();
+    //testZeroBlue();
     //testKeepOnlyBlue();
     //testKeepOnlyRed();
     //testKeepOnlyGreen();
@@ -70,7 +94,7 @@ public class PictureTester
     //testMirrorArms();
     //testMirrorGull();
     //testMirrorDiagonal();
-    //testCollage();
+    testCollage();
     //testCopy();
     //testEdgeDetection();
     //testEdgeDetection2();
